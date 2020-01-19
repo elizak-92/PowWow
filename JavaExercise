@@ -27,7 +27,6 @@ public class JavaExercise {
             } else {
                 System.out.println(i);
             }
-
         }
     }
 
@@ -42,9 +41,7 @@ public class JavaExercise {
             } else {
                 System.out.println(i);
             }
-
         }
-
     }
 
     private static boolean isNumberDivisibleBySeven(int number) {
