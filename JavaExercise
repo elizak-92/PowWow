@@ -1,0 +1,62 @@
+/*Write a Java program that prints the numbers from 1 to 100 in 2 lists. In the first list, for multiples of
+        seven print “Pow” instead of the number, and for multiples of four, print “Wow”. For numbers which
+        are multiplies of both seven and four, print “PowWow”.
+        In the second list, for multiples of seven print “Pow” instead of the number, and for number that
+        include the digit 7, print “Wow” instead of the number. For numbers that are both multiplies of
+        seven and contain the digit 7, print “PowWow”.*/
+
+public class JavaExercise {
+
+
+    public static void main(String[] args) {
+
+        firstList();
+
+        //  secondList();
+
+    }
+
+    public static void firstList() {
+        for (int i = 1; i < 101; i++) {
+            if (isNumberDivisibleBySeven(i) && isNumberDivisibleByFour(i)) {
+                System.out.println("PowWow");
+            } else if (isNumberDivisibleBySeven(i)) {
+                System.out.println("Pow");
+            } else if (isNumberDivisibleByFour(i)) {
+                System.out.println("Wow");
+            } else {
+                System.out.println(i);
+            }
+
+        }
+    }
+
+    public static void secondList() {
+        for (int i = 1; i < 101; i++) {
+            if (doesNumberContainsDigitSeven(i) && isNumberDivisibleBySeven(i)) {
+                System.out.println("PowWow");
+            } else if (doesNumberContainsDigitSeven(i)) {
+                System.out.println("Wow");
+            } else if (isNumberDivisibleBySeven(i)) {
+                System.out.println("Pow");
+            } else {
+                System.out.println(i);
+            }
+
+        }
+
+    }
+
+    private static boolean isNumberDivisibleBySeven(int number) {
+        return number % 7 == 0;
+    }
+
+    private static boolean isNumberDivisibleByFour(int number) {
+        return number % 4 == 0;
+    }
+
+    private static boolean doesNumberContainsDigitSeven(int number) {
+        return String.valueOf(number).contains("7");
+    }
+}
+
